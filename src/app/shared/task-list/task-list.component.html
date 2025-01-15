@@ -1,6 +1,9 @@
 <section>
   @for (task of tasks(); track task.title) {
-  <h3>{{ task.title }}</h3>
+  <h3 [class.completed]="task.completed">{{ task.title }}</h3>
+  <button (click)="toggleCompletion(task.title, task.category)">
+    {{ task.completed ? "Undo" : "Complete" }}
+  </button>
   <button (click)="onRemoveTask(task.title, task.category)" mat-flat-button>
     Remover
   </button>

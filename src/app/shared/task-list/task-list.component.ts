@@ -13,6 +13,10 @@ export class TaskListComponent {
 
   tasks = this.taskService.tasks;
 
+  toggleCompletion(title: string, category: string): void {
+    this.taskService.toggleTaskCompletion(title, category);
+  }
+
   onRemoveTask(title: string, category: string) {
     this.taskService.removeTask(title, category);
   }
