@@ -24,6 +24,16 @@ export class TaskService {
     );
   }
 
+  toggleTaskCompletion(title: string, category: string): void {
+    this.tasks.update((tasks) =>
+      tasks.map((task) =>
+        task.title === title && task.category === category
+          ? { ...task, completed: !task.completed }
+          : task
+      )
+    );
+  }
+
   private loadTasks(): ITask[] {
     const storedTasks = localStorage.getItem(this.storageKey);
     return storedTasks ? JSON.parse(storedTasks) : [];
