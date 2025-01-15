@@ -1,1 +1,8 @@
-<p>task-list works!</p>
+<section>
+  @for (task of tasks(); track task.title) {
+  <h3>{{ task.title }}</h3>
+  <button (click)="onRemoveTask(task.title, task.category)" mat-flat-button>
+    Remover
+  </button>
+  }
+</section>
