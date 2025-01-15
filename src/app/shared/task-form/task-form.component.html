@@ -1,14 +1,22 @@
-<section class="d-flex gap-2 align-items-center justify-content-center">
-  <mat-form-field>
-    <mat-label>Input</mat-label>
-    <input matInput />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button class="m-0 p-0 bg" mat-flat-button>+</button>
+<section class="mt-5">
+  <form
+    [formGroup]="taskForm"
+    class="d-flex gap-2 align-items-center justify-content-center"
+  >
+    <mat-form-field>
+      <mat-label>Tarefa</mat-label>
+      <input formControlName="title" matInput required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="category" required>
+        @for (categorie of categories; track categorie.value){
+        <mat-option value="{{ categorie.value }}">{{
+          categorie.viewValue
+        }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <button (click)="onAddTask()" mat-flat-button>+</button>
+  </form>
 </section>
