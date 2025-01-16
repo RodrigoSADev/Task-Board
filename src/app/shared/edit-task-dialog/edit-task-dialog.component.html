@@ -1,0 +1,30 @@
+<section>
+  <h2 mat-dialog-title>Editar Tarefa</h2>
+  <mat-dialog-content [formGroup]="editForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="category" required>
+        @for (category of categories; track category.value) {
+        <mat-option [value]="category.value">{{
+          category.viewValue
+        }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button
+      mat-button
+      [mat-dialog-close]="editForm.value"
+      [disabled]="editForm.invalid"
+    >
+      Salvar
+    </button>
+  </mat-dialog-actions>
+</section>
