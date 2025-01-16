@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { ITask } from '../../interfaces/task.interface';
 import { TaskService } from '../../services/task.service';
 import { EditTaskDialogComponent } from '../edit-task-dialog/edit-task-dialog.component';
 
 @Component({
   selector: 'app-task-list',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, MatIconModule],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss',
 })

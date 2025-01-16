@@ -1,16 +1,42 @@
 <section layout="row" layout-wrap>
   @for (task of tasks(); track task.title) {
-  <div class="d-flex gap-2">
+  <div class="d-flex gap-2 mb-3">
     <h3 [class.completed]="task.completed">{{ task.title }}</h3>
     <button
       (click)="toggleCompletion(task.title, task.category)"
       mat-flat-button
     >
-      {{ task.completed ? "Undo" : "Complete" }}
+      @if (task.completed) {
+      <mat-icon
+        class="m-0 fw-bold"
+        aria-hidden="false"
+        aria-label="Undo Task Icon"
+        fontIcon="close"
+      ></mat-icon>
+      } @else {
+      <mat-icon
+        class="m-0 fw-bold"
+        aria-hidden="false"
+        aria-label="Complete Task Icon"
+        fontIcon="check"
+      ></mat-icon>
+      }
     </button>
-    <button (click)="onEditTask(task)" mat-flat-button>Editar</button>
+    <button (click)="onEditTask(task)" mat-flat-button>
+      <mat-icon
+        class="m-0"
+        aria-hidden="false"
+        aria-label="Edit Task Icon"
+        fontIcon="edit"
+      ></mat-icon>
+    </button>
     <button (click)="onRemoveTask(task.title, task.category)" mat-flat-button>
-      Remover
+      <mat-icon
+        class="m-0"
+        aria-hidden="false"
+        aria-label="Delete Task Icon"
+        fontIcon="delete"
+      ></mat-icon>
     </button>
   </div>
   }
