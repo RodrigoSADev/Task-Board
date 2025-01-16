@@ -1,11 +1,17 @@
-<section>
+<section layout="row" layout-wrap>
   @for (task of tasks(); track task.title) {
-  <h3 [class.completed]="task.completed">{{ task.title }}</h3>
-  <button (click)="toggleCompletion(task.title, task.category)">
-    {{ task.completed ? "Undo" : "Complete" }}
-  </button>
-  <button (click)="onRemoveTask(task.title, task.category)" mat-flat-button>
-    Remover
-  </button>
+  <div class="d-flex gap-2">
+    <h3 [class.completed]="task.completed">{{ task.title }}</h3>
+    <button
+      (click)="toggleCompletion(task.title, task.category)"
+      mat-flat-button
+    >
+      {{ task.completed ? "Undo" : "Complete" }}
+    </button>
+    <button (click)="onEditTask(task)" mat-flat-button>Editar</button>
+    <button (click)="onRemoveTask(task.title, task.category)" mat-flat-button>
+      Remover
+    </button>
+  </div>
   }
 </section>
