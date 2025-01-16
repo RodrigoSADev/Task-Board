@@ -18,6 +18,16 @@ export class TaskService {
     this.tasks.update((tasks) => [...tasks, newTask]);
   }
 
+  updateTask(oldTitle: string, oldCategory: string, updatedTask: ITask): void {
+    this.tasks.update((tasks) =>
+      tasks.map((task) =>
+        task.title === oldTitle && task.category === oldCategory
+          ? updatedTask
+          : task
+      )
+    );
+  }
+
   removeTask(title: string, category: string): void {
     this.tasks.update((tasks) =>
       tasks.filter((task) => task.title !== title || task.category !== category)
