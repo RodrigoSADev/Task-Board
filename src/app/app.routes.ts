@@ -1,14 +1,9 @@
 import { Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
-    pathMatch: 'full',
-  },
-  {
-    path: 'inicio',
-    loadComponent: () =>
-      import('./components/main/main.component').then((m) => m.MainComponent),
+    component: AppComponent,
   },
 ];
