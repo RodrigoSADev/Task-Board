@@ -51,15 +51,19 @@ export class TaskFormComponent {
     title: ['', [Validators.required]],
     category: ['', [Validators.required]],
   });
+  isFormInvalid = false;
 
   onAddTask() {
     if (this.taskForm.valid) {
+      this.isFormInvalid = false;
       const newTask = {
         title: this.taskForm.value.title || '',
         category: this.taskForm.value.category || '',
       } as ITask;
       this.taskService.addTask(newTask);
       this.taskForm.reset();
+    } else {
+      this.isFormInvalid = true;
     }
   }
 }
