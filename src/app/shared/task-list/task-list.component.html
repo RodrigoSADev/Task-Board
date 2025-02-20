@@ -1,5 +1,7 @@
+@if (tasks().length > 0) {
 <app-filter (filterChange)="onFilterChange($event)" />
 
+@if (filteredTasks().length > 0) {
 <section layout="row" layout-wrap>
   @for (task of filteredTasks(); track task.title) {
   <div class="d-flex gap-2 mb-3">
@@ -43,3 +45,8 @@
   </div>
   }
 </section>
+} @else {
+<h2 class="text-center mt-3">Nenhuma tarefa com essa categoria encontrada</h2>
+} } @else {
+<h1 class="text-center mt-5">Nenhuma tarefa encontrada</h1>
+}
