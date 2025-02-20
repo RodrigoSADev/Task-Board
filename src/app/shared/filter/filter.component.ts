@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -9,7 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
-  @Output() filterChange = new EventEmitter<string>();
+  filterChange = output<string>();
 
   categories = [
     {
