@@ -1,5 +1,7 @@
+<app-filter (filterChange)="onFilterChange($event)" />
+
 <section layout="row" layout-wrap>
-  @for (task of tasks(); track task.title) {
+  @for (task of filteredTasks(); track task.title) {
   <div class="d-flex gap-2 mb-3">
     <h3 [class.completed]="task.completed">{{ task.title }}</h3>
     <button
