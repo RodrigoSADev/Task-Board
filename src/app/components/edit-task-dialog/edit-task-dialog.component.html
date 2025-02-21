@@ -1,14 +1,18 @@
 <section>
-  <h2 mat-dialog-title>Editar Tarefa</h2>
+  <h2 mat-dialog-title data-test="dialog-title">Editar Tarefa</h2>
   <mat-dialog-content [formGroup]="editForm">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" data-test="task-form-field">
       <mat-label>Tarefa</mat-label>
-      <input matInput formControlName="title" required />
+      <input matInput formControlName="title" required data-test="task-input" />
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" data-test="category-form-field">
       <mat-label>Categoria</mat-label>
-      <mat-select formControlName="category" required>
+      <mat-select
+        formControlName="category"
+        required
+        data-test="category-select"
+      >
         @for (category of categories; track category.value) {
         <mat-option [value]="category.value">{{
           category.viewValue
@@ -18,11 +22,14 @@
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button mat-dialog-close data-test="cancel-button">
+      Cancelar
+    </button>
     <button
       mat-button
       [mat-dialog-close]="editForm.value"
       [disabled]="editForm.invalid"
+      data-test="save-button"
     >
       Salvar
     </button>
