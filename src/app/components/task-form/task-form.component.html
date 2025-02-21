@@ -2,27 +2,41 @@
   <form
     [formGroup]="taskForm"
     class="d-flex gap-2 align-items-center justify-content-center"
+    data-test="task-form"
   >
     <mat-form-field class="w-50">
       <mat-label>Tarefa</mat-label>
-      <input formControlName="title" matInput required />
+      <input
+        formControlName="title"
+        matInput
+        required
+        data-test="task-form-title"
+      />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Categoria</mat-label>
-      <mat-select formControlName="category" required>
+      <mat-select
+        formControlName="category"
+        required
+        data-test="task-form-category"
+      >
         @for (categorie of categories; track categorie.value){
-        <mat-option value="{{ categorie.value }}">{{
-          categorie.viewValue
-        }}</mat-option>
+        <mat-option
+          value="{{ categorie.value }}"
+          data-test="task-form-category-option"
+        >
+          {{ categorie.viewValue }}
+        </mat-option>
         }
       </mat-select>
     </mat-form-field>
-    <button (click)="onAddTask()" mat-flat-button>
+    <button (click)="onAddTask()" mat-flat-button data-test="add-button">
       <mat-icon
         class="m-0 fw-bold"
         aria-hidden="false"
         aria-label="Add Task Icon"
         fontIcon="add"
+        data-test="add-button-icon"
       ></mat-icon>
     </button>
   </form>
