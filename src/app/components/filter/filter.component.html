@@ -1,8 +1,11 @@
 <section class="d-flex justify-content-center flex-column align-items-center">
-  <h3>Filtrar por Categoria</h3>
-  <mat-form-field>
-    <mat-label>Categoria</mat-label>
-    <mat-select (selectionChange)="onFilterChange($event.value)">
+  <h3 data-test="filter-title">Filtrar por Categoria</h3>
+  <mat-form-field data-test="filter-form-field">
+    <mat-label data-test="filter-label">Categoria</mat-label>
+    <mat-select
+      (selectionChange)="onFilterChange($event.value)"
+      data-test="filter-select"
+    >
       <mat-option value="all">Todas</mat-option>
       @for (category of categories; track category.value) {
       <mat-option [value]="category.value">{{ category.viewValue }}</mat-option>
