@@ -4,8 +4,10 @@
 @if (filteredTasks().length > 0) {
 <section layout="row" layout-wrap>
   @for (task of filteredTasks(); track task.title) {
-  <div class="d-flex gap-2 mb-3">
-    <h3 [class.completed]="task.completed">{{ task.title }}</h3>
+  <div class="d-flex gap-2 mb-3" data-test="task-item">
+    <h3 [class.completed]="task.completed" data-test="task-title">
+      {{ task.title }}
+    </h3>
     <button
       (click)="toggleCompletion(task.title, task.category)"
       mat-flat-button
@@ -16,6 +18,7 @@
         aria-hidden="false"
         aria-label="Undo Task Icon"
         fontIcon="close"
+        data-test="toggle-button"
       ></mat-icon>
       } @else {
       <mat-icon
@@ -23,6 +26,7 @@
         aria-hidden="false"
         aria-label="Complete Task Icon"
         fontIcon="check"
+        data-test="toggle-button"
       ></mat-icon>
       }
     </button>
@@ -32,6 +36,7 @@
         aria-hidden="false"
         aria-label="Edit Task Icon"
         fontIcon="edit"
+        data-test="edit-button"
       ></mat-icon>
     </button>
     <button (click)="onRemoveTask(task.title, task.category)" mat-flat-button>
@@ -40,16 +45,19 @@
         aria-hidden="false"
         aria-label="Delete Task Icon"
         fontIcon="delete"
+        data-test="delete-button"
       ></mat-icon>
     </button>
   </div>
   }
 </section>
 } @else {
-<h2 class="text-center mt-3">Nenhuma tarefa com essa categoria encontrada</h2>
+<h2 class="text-center mt-3" data-test="no-tasks-category-message">
+  Nenhuma tarefa com essa categoria encontrada
+</h2>
 } } @else {
 <div class="d-flex flex-column align-items-center justify-content-center mt-5">
   <img class="w-25" src="no_data.svg" alt="No data" />
-  <h1 class="mt-5">Nenhuma tarefa encontrada</h1>
+  <h1 class="mt-5" data-test="no-tasks-message">Nenhuma tarefa encontrada</h1>
 </div>
 }
