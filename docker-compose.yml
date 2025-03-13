@@ -1,0 +1,12 @@
+version: "1.0"
+
+services:
+  task-board-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: task-board:v1
+    container_name: task-board
+    restart: on-failure
+    ports:
+      - 8080:80
