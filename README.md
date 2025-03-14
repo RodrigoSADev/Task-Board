@@ -23,6 +23,28 @@ Este projeto possui as seguintes funcionalidades:
 - Validação de formulários
 - Interface responsiva e amigável
 
+## Docker
+
+Este projeto inclui um `Dockerfile` e um `docker-compose.yml` para facilitar a criação e execução de contêineres Docker.
+
+### Construindo a imagem Docker
+
+Para construir a imagem Docker, execute o seguinte comando na raiz do projeto:
+
+```sh
+docker build -t task-board:v1 .
+```
+
+### Executando o contêiner Docker
+
+Para executar o contêiner Docker, utilize o `docker-compose` com o seguinte comando:
+
+```sh
+docker-compose up
+```
+
+A aplicação estará disponível em `http://localhost:8080/`.
+
 ## CI/CD
 
 Este projeto utiliza uma pipeline de CI/CD configurada no GitHub Actions. A pipeline é composta por dois jobs principais:
