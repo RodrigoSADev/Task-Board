@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, computed, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,6 +14,15 @@ import { RemoveTaskDialogComponent } from '../remove-task-dialog/remove-task-dia
   imports: [MatButtonModule, MatIconModule, FilterComponent],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss',
+  animations: [
+    trigger('fade', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.5s', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate('0.5s', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class TaskListComponent {
   taskService = inject(TaskService);

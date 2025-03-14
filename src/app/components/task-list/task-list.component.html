@@ -4,7 +4,7 @@
 @if (filteredTasks().length > 0) {
 <section layout="row" layout-wrap>
   @for (task of filteredTasks(); track task.title) {
-  <div class="d-flex gap-2 mb-3" data-test="task-item">
+  <div class="d-flex gap-2 mb-3" @fade data-test="task-item">
     <h3 [class.completed]="task.completed" data-test="task-title">
       {{ task.title }}
     </h3>
