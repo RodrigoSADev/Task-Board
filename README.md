@@ -12,6 +12,7 @@ As principais tecnologias utilizadas neste projeto são:
 - Jest
 - TypeScript
 - SCSS
+- Docker
 
 ## Funcionalidades
 
