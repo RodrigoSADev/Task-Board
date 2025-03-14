@@ -1,7 +1,10 @@
 import { signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import {
+  provideAnimations,
+  provideNoopAnimations,
+} from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
 import { ITask } from '../../interfaces/task.interface';
 import { TaskService } from '../../services/task.service';
@@ -37,6 +40,7 @@ describe('TaskListComponent', () => {
       imports: [TaskListComponent],
       providers: [
         provideAnimations(),
+        provideNoopAnimations(),
         { provide: TaskService, useValue: taskService },
         { provide: MatDialog, useValue: dialog },
       ],
