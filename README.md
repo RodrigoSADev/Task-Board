@@ -1,45 +1,74 @@
 # TaskBoard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+O TaskBoard é uma aplicação para gerenciar tarefas, permitindo adicionar, editar, remover e filtrar tarefas por categoria.
 
-## Development server
+## Tecnologias
 
-To start a local development server, run:
+As principais tecnologias utilizadas neste projeto são:
 
-```bash
-ng serve
-```
+- Angular 19
+- Angular Material
+- RxJS
+- Jest
+- TypeScript
+- SCSS
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+Este projeto possui as seguintes funcionalidades:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Adicionar, editar e remover tarefas
+- Filtrar tarefas por categoria
+- Animações de entrada e saída para tarefas
+- Validação de formulários
+- Interface responsiva e amigável
 
-```bash
-ng generate component component-name
-```
+## CI/CD
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Este projeto utiliza uma pipeline de CI/CD configurada no GitHub Actions. A pipeline é composta por dois jobs principais:
 
-```bash
-ng generate --help
-```
+- **CI (Continuous Integration)**: Executa testes e build do projeto em cada push ou pull request na branch `main`.
+- **CD (Continuous Deploy)**: Após a conclusão do job de CI, o projeto é implantado automaticamente no Vercel.
 
-## Building
+## Conventional Commits
 
-To build the project run:
+Este projeto utiliza o padrão de conventional commits ([Conventional Commits](https://www.conventionalcommits.org/)) para manter um histórico de commits claro e consistente.
 
-```bash
-ng build
-```
+## Como rodar o projeto na sua máquina
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Pré-requisitos
 
-## Running unit tests
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+    Node.js (versão 18 ou superior)
+    Angular CLI (versão 18 ou superior)
 
-```bash
-ng test
-```
+### Configuração do projeto
+
+Siga os passos abaixo para configurar o projeto em sua máquina:
+
+Clone o repositório para o seu ambiente local: ```git clone https://github.com/RodrigoSADev/Task-Board```
+
+Navegue até o diretório do projeto: ```cd nome-do-repositorio```
+
+Instale as dependências do projeto: ```npm install```
+
+### Executando o projeto
+
+Após a configuração, você pode executar o projeto localmente. Utilize o seguinte comando: `ng serve`
+
+A aplicação estará disponível em `http://localhost:4200/`. A página será recarregada automaticamente sempre que houver alterações no código.
+
+## Executando Testes Unitários
+
+Execute o comando `npm run test` para executar os testes unitários via [Jest](https://jestjs.io/pt-BR/).
+
+![Captura de tela de 2025-03-14 09-47-40](https://github.com/user-attachments/assets/7c958d97-fe6a-4c24-ac6d-25fa9dd20507)
+
+## Screenshots
+
+![Captura de tela de 2025-03-14 10-15-36](https://github.com/user-attachments/assets/46022a14-f82c-4fe5-8a97-a2e8499a1f37)
+
+![Captura de tela de 2025-03-14 10-32-53](https://github.com/user-attachments/assets/850d97c3-cb61-4325-9edd-c529979ebcfd)
+
+
